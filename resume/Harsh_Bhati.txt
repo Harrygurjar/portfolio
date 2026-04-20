@@ -1,0 +1,69 @@
+Harsh Bhati
+Full-Stack Developer
+harshbhati02@gmail.com
+ 
++91 8800702742
+ 
+Greater Noida, India
+ 
+linkedin.com/in/harsh-bhati-493716241
+ 
+PROFESSIONAL SUMMARY
+Full-Stack Developer with hands-on experience building scalable web and mobile applications using React, 
+React Native, TypeScript, Node.js, and MongoDB. Experienced in developing data-driven dashboards, 
+geolocation-based systems, and offline-first mobile applications. Strong in implementing enterprise 
+authentication (MSAL, OAuth) and managing complex application state. Focused on delivering reliable, high-
+performance solutions.
+PROFESSIONAL EXPERIENCE
+Full-Stack Engineer, Ramboll
+•Developing and maintaining full-stack applications for infrastructure and 
+inspection platforms.
+•Building responsive, data-intensive UIs using React, TypeScript, Mantine, and 
+Recharts.
+ 
+•Implementing secure authentication and authorization using MSAL and OAuth.
+•Managing global application state with Zustand and optimizing frontend 
+performance.
+•Collaborating with cross-functional teams to deliver production-ready features.
+Full-Stack Engineering Intern, Ramboll
+•Contributed to frontend modules and interactive dashboards.
+•Assisted in debugging, feature development, and production deployments in an 
+agile environment.
+ 
+EDUCATION
+B.Tech, Accurate Institute of Management and Technology 2019 – 2023
+12th, Translam Academy International 2019
+TECHNICAL SKILLS
+Languages
+JavaScript (ES6+), TypeScript
+Backend
+Node.js, Express.js
+State Management
+Zustand, Context API
+Concepts
+REST APIs, Offline Storage, Geolocation, Agile/ Scrum
+Frontend
+React, React Native, Mantine UI, HTML5, CSS3
+Database
+MongoDB
+Tools & Libraries
+Git, Axios, Recharts, MSAL, OAuth
+08/2024 – Present
+01/2024 – 08/2024
+KEY PROJECTS
+Ram Inspect Pro (React Native)
+•Offline-first mobile inspection app with image capture, gallery access, and geolocation tagging.
+•Implemented data synchronization once network connectivity is restored.
+Tech: React Native, TypeScript, Zustand, Geolocation APIs
+Airpave
+•Geolocation-based airport inspection system with file uploads and live map visualization.
+•Automated coordinate extraction and report generation.
+Tech: React, TypeScript, Mantine, Google Maps API
+Piksi
+•Road inspection analytics platform with dashboards and tabular reports.
+•Visualized time-based trends using charts and data tables.
+Tech: React, Mantine, Recharts, .NET
+Regen Nexus
+•Admin-driven portfolio platform for managing events, images, and content.
+•Focused on clean UI and seamless API integration.
+Tech: React, Node.js, MongoDB, Axios
