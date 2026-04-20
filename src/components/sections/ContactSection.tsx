@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { motion } from "framer-motion";
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
@@ -37,7 +38,7 @@ export function ContactSection() {
         throw new Error(payload.message || "Could not send your message.");
       }
 
-      setStatus({ state: "success", message: "Message sent successfully." });
+      setStatus({ state: "success", message: "✓ Message sent successfully!" });
       form.reset();
     } catch (error) {
       setStatus({
@@ -53,73 +54,117 @@ export function ContactSection() {
   return (
     <Reveal>
       <section id="contact" className="mx-auto max-w-6xl px-2 py-16 md:py-20">
-        <div className="glass-card rounded-3xl p-6 md:p-10">
-          <SectionHeading
-            eyebrow="Connect"
-            title="Let's Build Something Meaningful"
-            description="Share your idea, collaboration opportunity, or role details and I will reply soon."
-          />
+        <div className="glass-card relative overflow-hidden rounded-3xl p-8 md:p-12">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute -left-32 -top-32 h-80 w-80 rounded-full bg-purple-500/20 blur-3xl" />
+            <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
+          </div>
 
-          <form onSubmit={handleSubmit} className="grid gap-4">
-            <label className="grid gap-2 text-sm text-zinc-300" htmlFor="name">
-              Name
-              <input
-                id="name"
-                name="name"
-                required
-                className="rounded-xl border border-white/15 bg-zinc-950/80 px-4 py-3 text-zinc-100 outline-none transition-all focus:border-cyan-300/70 focus:shadow-[0_0_0_3px_rgba(103,232,249,0.17)]"
-                placeholder="Your name"
-              />
-            </label>
+          <div className="relative z-10">
+            <SectionHeading
+              eyebrow="Connect"
+              title="Let's Build Something Meaningful"
+              description="Share your idea, collaboration opportunity, or role details and I will reply soon."
+            />
 
-            <label className="grid gap-2 text-sm text-zinc-300" htmlFor="email">
-              Email
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="rounded-xl border border-white/15 bg-zinc-950/80 px-4 py-3 text-zinc-100 outline-none transition-all focus:border-cyan-300/70 focus:shadow-[0_0_0_3px_rgba(103,232,249,0.17)]"
-                placeholder="your@email.com"
-              />
-            </label>
-
-            <label
-              className="grid gap-2 text-sm text-zinc-300"
-              htmlFor="message"
-            >
-              Message
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                className="rounded-xl border border-white/15 bg-zinc-950/80 px-4 py-3 text-zinc-100 outline-none transition-all focus:border-cyan-300/70 focus:shadow-[0_0_0_3px_rgba(103,232,249,0.17)]"
-                placeholder="Tell me about your project or role"
-              />
-            </label>
-
-            <div className="flex items-center gap-3 pt-1">
-              <button
-                type="submit"
-                disabled={status.state === "submitting"}
-                className="cyber-btn-primary disabled:cursor-not-allowed disabled:opacity-70"
+            <form onSubmit={handleSubmit} className="grid gap-6 max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
               >
-                {status.state === "submitting" ? "Sending..." : "Send Message"}
-              </button>
-              {status.message && (
-                <p
-                  className={`text-sm ${
-                    status.state === "success"
-                      ? "text-emerald-300"
-                      : "text-rose-300"
-                  }`}
+                <label
+                  className="block text-sm font-semibold text-cyan-300 mb-2"
+                  htmlFor="name"
                 >
-                  {status.message}
-                </p>
-              )}
-            </div>
-          </form>
+                  Your Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full rounded-lg border border-cyan-300/30 bg-zinc-950/50 px-4 py-3 text-zinc-100 outline-none transition-all duration-300 placeholder:text-zinc-500 focus:border-cyan-300/70 focus:bg-zinc-950/80 focus:shadow-[0_0_16px_rgba(45,212,255,0.2)]"
+                  placeholder="John Doe"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+              >
+                <label
+                  className="block text-sm font-semibold text-cyan-300 mb-2"
+                  htmlFor="email"
+                >
+                  Email Address
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  className="w-full rounded-lg border border-cyan-300/30 bg-zinc-950/50 px-4 py-3 text-zinc-100 outline-none transition-all duration-300 placeholder:text-zinc-500 focus:border-cyan-300/70 focus:bg-zinc-950/80 focus:shadow-[0_0_16px_rgba(45,212,255,0.2)]"
+                  placeholder="you@example.com"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                <label
+                  className="block text-sm font-semibold text-cyan-300 mb-2"
+                  htmlFor="message"
+                >
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                  className="w-full rounded-lg border border-cyan-300/30 bg-zinc-950/50 px-4 py-3 text-zinc-100 outline-none transition-all duration-300 placeholder:text-zinc-500 focus:border-cyan-300/70 focus:bg-zinc-950/80 focus:shadow-[0_0_16px_rgba(45,212,255,0.2)] resize-none"
+                  placeholder="Tell me about your project, opportunity, or just say hi..."
+                />
+              </motion.div>
+
+              <motion.div
+                className="flex items-center gap-4 pt-2"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                <button
+                  type="submit"
+                  disabled={status.state === "submitting"}
+                  className="cyber-btn-primary disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {status.state === "submitting"
+                    ? "⏳ Sending..."
+                    : "✉️ Send Message"}
+                </button>
+                {status.message && (
+                  <motion.p
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className={`text-sm font-medium ${
+                      status.state === "success"
+                        ? "text-emerald-400"
+                        : "text-rose-400"
+                    }`}
+                  >
+                    {status.message}
+                  </motion.p>
+                )}
+              </motion.div>
+            </form>
+          </div>
         </div>
       </section>
     </Reveal>

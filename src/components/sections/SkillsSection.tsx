@@ -9,20 +9,18 @@ import {
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { portfolio } from "@/data/portfolio";
 
-const skillStyles = ["md:col-span-2", "", "", "md:row-span-2", "md:col-span-2"];
-
 export function SkillsSection() {
   return (
     <Reveal>
       <section id="skills" className="mx-auto max-w-6xl px-2 py-16 md:py-20">
         <SectionHeading
           eyebrow="Skills"
-          title="Tech Stack"
-          description="A focused toolkit for shipping performant web and mobile products."
+          title="Tech Stack & Tools"
+          description="A focused toolkit for shipping performant, scalable web and mobile products."
         />
 
         <motion.ul
-          className="grid grid-cols-1 gap-4 md:grid-cols-3"
+          className="grid grid-cols-1 gap-5 md:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -32,13 +30,20 @@ export function SkillsSection() {
             <motion.li
               key={skill}
               variants={staggerItem}
-              className={`glass-card min-h-28 rounded-2xl border border-cyan-300/25 p-5 ${skillStyles[index] ?? ""}`}
+              className="group glass-card relative min-h-32 overflow-hidden rounded-2xl border border-cyan-300/25 p-6 cursor-pointer transition-all duration-300 hover:border-purple-400/50"
             >
-              <div className="flex h-full items-end justify-between">
-                <h3 className="font-display text-2xl tracking-tight text-zinc-100 md:text-3xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-transparent to-purple-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-15" />
+
+              <div className="relative z-10 flex h-full flex-col items-start justify-between">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-transparent bg-gradient-to-r from-cyan-300 to-purple-300 bg-clip-text md:text-3xl">
                   {skill}
                 </h3>
-                <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]" />
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 shadow-lg shadow-cyan-500/40" />
+                  <span className="text-xs text-zinc-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    Proficient
+                  </span>
+                </div>
               </div>
             </motion.li>
           ))}
