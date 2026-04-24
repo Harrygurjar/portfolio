@@ -6,11 +6,13 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
+import { StatsSection } from "@/components/sections/StatsSection";
 
 export function PortfolioPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-cyber px-4 pb-16 sm:px-6 lg:px-8">
       <HeroSection />
+      <StatsSection />
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />

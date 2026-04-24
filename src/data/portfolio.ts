@@ -33,6 +33,7 @@ export const portfolio = {
     "Zustand",
     "MSAL / OAuth",
     "Recharts",
+    "UI UX Pro Max",
   ],
   projects: [
     {
